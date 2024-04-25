@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MobyLabWebProgramming.Infrastructure.Migrations
 {
     [DbContext(typeof(WebAppDatabaseContext))]
-    [Migration("20240425111123_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240425115442_SecondCreate")]
+    partial class SecondCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -80,7 +80,7 @@ namespace MobyLabWebProgramming.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BIDS", (string)null);
+                    b.ToTable("Bids");
                 });
 
             modelBuilder.Entity("MobyLabWebProgramming.Core.Entities.Categories", b =>

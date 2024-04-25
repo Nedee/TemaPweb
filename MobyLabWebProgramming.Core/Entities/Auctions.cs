@@ -11,5 +11,5 @@ public class Auctions : BaseEntity
     /// This property is used as a foreign to the user table in the database and as a correlation key for the ORM.
     /// </summary>
     public ICollection<Items> Items { get; set; } = default!;
-    //public ICollection<Auctions_Of_Interest> AuctionsOfInterest { get; set; }
+    public ICollection<Auctions_Of_Interest> AuctionsOfInterest { get; set; }
 }

@@ -20,4 +20,7 @@ public class User : BaseEntity
     /// </summary>
     public ICollection<UserFile> UserFiles { get; set; } = default!;
     public ICollection<Bids> Bids { get; set; } = default!;
+
+    public ICollection<Auctions_Of_Interest> AuctionsOfInterest { get; set; } = default!;
+
 }
