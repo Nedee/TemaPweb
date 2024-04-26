@@ -8,7 +8,4 @@ public class UserDetailsDTO
     public Guid Id { get; set; }
     public string Adress { get; set; } = default!;
     public DateTime Date_of_Birth { get; set; }
-    public UserDTO User { get; set; } = default!;
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
 }

@@ -39,6 +39,10 @@ namespace MobyLabWebProgramming.Infrastructure.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("start_date")
                         .HasMaxLength(255)
                         .HasColumnType("timestamp without time zone");
@@ -174,8 +178,7 @@ namespace MobyLabWebProgramming.Infrastructure.Migrations
 
                     b.HasIndex("AuctionId");
 
-                    b.HasIndex("CategoryId")
-                        .IsUnique();
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Items");
                 });
@@ -334,8 +337,8 @@ namespace MobyLabWebProgramming.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("MobyLabWebProgramming.Core.Entities.Categories", "Category")
-                        .WithOne("item")
-                        .HasForeignKey("MobyLabWebProgramming.Core.Entities.Items", "CategoryId")
+                        .WithMany("items")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -375,8 +378,7 @@ namespace MobyLabWebProgramming.Infrastructure.Migrations
 
             modelBuilder.Entity("MobyLabWebProgramming.Core.Entities.Categories", b =>
                 {
-                    b.Navigation("item")
-                        .IsRequired();
+                    b.Navigation("items");
                 });
 
             modelBuilder.Entity("MobyLabWebProgramming.Core.Entities.Items", b =>

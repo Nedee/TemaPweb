@@ -39,9 +39,9 @@ public class ItemsConfiguration : IEntityTypeConfiguration<Items>
             .OnDelete(DeleteBehavior.Cascade); // This specifies the delete behavior when the referenced entity is removed.
 
         builder.HasOne(e => e.Category)
-            .WithOne(e => e.item)
-            .HasForeignKey<Items>(e => e.CategoryId)
-            .HasPrincipalKey<Categories>(e => e.Id)
+            .WithMany(e => e.items)
+            .HasForeignKey(e => e.CategoryId)
+            .HasPrincipalKey(e => e.Id)
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
     }

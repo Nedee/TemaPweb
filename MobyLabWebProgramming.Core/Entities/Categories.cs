@@ -6,5 +6,5 @@
 public class Categories : BaseEntity
 {
     public string name { get; set; } = default!;
-    public Items item { get; set; } = default!;
+    public ICollection<Items> items { get; set; } = default!;
 }

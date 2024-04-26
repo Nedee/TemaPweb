@@ -9,6 +9,7 @@ namespace MobyLabWebProgramming.Core.DataTransferObjects;
 public class AuctionsDTO
 {
     public Guid Id { get; set; }
-    public string start_date { get; set; } = default!;
-    public string end_date { get; set; } = default!;
+    public DateTime start_date { get; set; } = default!;
+    public DateTime end_date { get; set; } = default!;
+    public string Name { get; set; } = default!;
 }

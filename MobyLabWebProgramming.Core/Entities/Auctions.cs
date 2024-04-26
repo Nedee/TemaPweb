@@ -7,6 +7,7 @@ public class Auctions : BaseEntity
 {
     public DateTime start_date { get; set; } = default!;
     public DateTime end_date { get; set; } = default!;
+    public string name { get; set; } = default!;
     /// <summary>
     /// This property is used as a foreign to the user table in the database and as a correlation key for the ORM.
     /// </summary>

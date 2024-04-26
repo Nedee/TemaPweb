@@ -29,9 +29,9 @@ public class Items : BaseEntity
     /// <summary>
     /// This is a navigation property for the ORM to correlate this entity with the entity that it references via the foreign key.
     /// </summary>
-    public Auctions Auction { get; set; } = default!;
+    public Auctions Auction { get; set; }
     public Categories Category { get; set; } = default!;
-    public Guid CategoryId { get; set; } = default!;
+    public Guid CategoryId { get; set; }
     public ICollection<Bids> Bids { get; set; }
 
 }

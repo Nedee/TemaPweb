@@ -20,6 +20,7 @@ using Serilog;
 using Serilog.Events;
 using MobyLabWebProgramming.Infrastructure.Repositories.Interfaces;
 using MobyLabWebProgramming.Infrastructure.Repositories.Implementation;
+using MobyLabWebProgramming.Core.Entities;
 
 namespace MobyLabWebProgramming.Infrastructure.Extensions;
 
@@ -173,7 +174,12 @@ public static class WebApplicationBuilderExtensions
             .AddTransient<ILoginService, LoginService>()
             .AddTransient<IFileRepository, FileRepository>()
             .AddTransient<IUserFileService, UserFileService>()
-            .AddTransient<IMailService, MailService>();
+            .AddTransient<IMailService, MailService>()
+            .AddTransient<IUserDetailsService, UserDetailsService>()
+            .AddTransient<IAuctionsService, AuctionsService>()
+            .AddTransient<ICategoriesService, CategoriesService>()
+            .AddTransient<IItemsService, ItemsService>()
+            .AddTransient<IBidsService, BidsService>();
 
         return builder;
     }
